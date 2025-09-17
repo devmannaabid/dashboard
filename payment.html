@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments Management</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/payment.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html">
+                        <i class='bx bxs-dashboard'></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="prodect.html">
+                        <i class='bx bxs-package'></i>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="order.html">
+                        <i class='bx bxs-cart-alt'></i>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="payment.html" class="active">
+                        <i class='bx bxs-credit-card'></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="slider.html">
+                        <i class='bx bx-slider-alt'></i>
+                        Slider
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <i class='bx bxs-cog'></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded mb-4">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class='bx bx-menu'></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown ms-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i> Admin
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-user me-2'></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-cog me-2'></i> Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bx-log-out me-2'></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="header-title">Payments Management</h2>
+                <button class="btn btn-primary">
+                    <i class='bx bx-download'></i> Export Report
+                </button>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card card-stats card-primary h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Total Revenue</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$58,256</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-dollar-circle icon text-primary'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-success h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Completed</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1,024</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-check-circle icon text-success'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-warning h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Pending</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">87</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-time icon text-warning'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-danger h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                        Failed</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">32</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-x-circle icon text-danger'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-lg-8">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Revenue Overview</h6>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="periodDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Last 30 Days
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="periodDropdown">
+                                    <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
+                                    <li><a class="dropdown-item" href="#">Last 30 Days</a></li>
+                                    <li><a class="dropdown-item" href="#">Last 90 Days</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Payment Methods</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Credit Card</span>
+                                    <span>54%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 54%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>PayPal</span>
+                                    <span>26%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 26%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Bank Transfer</span>
+                                    <span>12%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 12%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Other</span>
+                                    <span>8%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 8%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Transaction History</h6>
+                    <div class="d-flex">
+                        <input type="text" class="form-control me-2 search-box" placeholder="Search transactions...">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-filter'></i> Filter
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="filterDropdown">
+                                <li><a class="dropdown-item" href="#">All Transactions</a></li>
+                                <li><a class="dropdown-item" href="#">Completed</a></li>
+                                <li><a class="dropdown-item" href="#">Pending</a></li>
+                                <li><a class="dropdown-item" href="#">Failed</a></li>
+                                <li><a class="dropdown-item" href="#">Refunded</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button class="btn btn-primary filter-btn">All</button>
+                        <button class="btn btn-outline-primary filter-btn">Completed</button>
+                        <button class="btn btn-outline-primary filter-btn">Pending</button>
+                        <button class="btn btn-outline-primary filter-btn">Failed</button>
+                        <button class="btn btn-outline-primary filter-btn">Refunded</button>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Transaction ID</th>
+                                    <th scope="col">Customer</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Method</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">#TXN-7258</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/payment/payment-1.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>John Doe</div>
+                                        </div>
+                                    </td>
+                                    <td>12 Nov 2023</td>
+                                    <td>
+                                        <span class="payment-method-badge bg-primary">
+                                            <i class='bx bxs-credit-card me-1'></i> Credit Card
+                                        </span>
+                                    </td>
+                                    <td>$247.99</td>
+                                    <td><span class="badge bg-success badge-status">Completed</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-receipt'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#TXN-7257</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/payment/payment-2.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Sarah Johnson</div>
+                                        </div>
+                                    </td>
+                                    <td>11 Nov 2023</td>
+                                    <td>
+                                        <span class="payment-method-badge bg-info">
+                                            <i class='bx bxl-paypal me-1'></i> PayPal
+                                        </span>
+                                    </td>
+                                    <td>$119.50</td>
+                                    <td><span class="badge bg-success badge-status">Completed</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-receipt'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#TXN-7256</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/payment/payment-3.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Michael Brown</div>
+                                        </div>
+                                    </td>
+                                    <td>10 Nov 2023</td>
+                                    <td>
+                                        <span class="payment-method-badge bg-success">
+                                            <i class='bx bxs-bank me-1'></i> Bank Transfer
+                                        </span>
+                                    </td>
+                                    <td>$455.25</td>
+                                    <td><span class="badge bg-warning badge-status">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-receipt'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#TXN-7255</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/payment/payment-4.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Emily Wilson</div>
+                                        </div>
+                                    </td>
+                                    <td>09 Nov 2023</td>
+                                    <td>
+                                        <span class="payment-method-badge bg-primary">
+                                            <i class='bx bxs-credit-card me-1'></i> Credit Card
+                                        </span>
+                                    </td>
+                                    <td>$78.99</td>
+                                    <td><span class="badge bg-danger badge-status">Failed</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-receipt'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#TXN-7254</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/payment/payment-5.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Robert Davis</div>
+                                        </div>
+                                    </td>
+                                    <td>08 Nov 2023</td>
+                                    <td>
+                                        <span class="payment-method-badge bg-info">
+                                            <i class='bx bxl-paypal me-1'></i> PayPal
+                                        </span>
+                                    </td>
+                                    <td>$322.40</td>
+                                    <td><span class="badge bg-secondary badge-status">Refunded</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-receipt'></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="js/chart.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>

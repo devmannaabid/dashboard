@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/product.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html">
+                        <i class='bx bxs-dashboard'></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="prodect.html" class="active">
+                        <i class='bx bxs-package'></i>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="order.html">
+                        <i class='bx bxs-cart-alt'></i>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="payment.html">
+                        <i class='bx bxs-credit-card'></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="slider.html">
+                        <i class='bx bx-slider-alt'></i>
+                        Slider
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <i class='bx bxs-cog'></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded mb-4">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class='bx bx-menu'></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown ms-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i> Admin
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-user me-2'></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-cog me-2'></i> Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bx-log-out me-2'></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="header-title">Product Management</h2>
+                <button class="btn btn-primary">
+                    <i class='bx bx-plus'></i> Add New Product
+                </button>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card card-stats card-primary h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Total Products</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">2,356</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-package icon text-primary'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-success h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        In Stock</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1,892</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-check-circle icon text-success'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-warning h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Low Stock</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">327</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-error icon text-warning'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-info h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                        Out of Stock</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">137</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-x-circle icon text-info'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Product List</h6>
+                    <div class="d-flex">
+                        <input type="text" class="form-control me-2 search-box" placeholder="Search products...">
+                        <button class="btn btn-outline-primary">
+                            <i class='bx bx-filter'></i> Filter
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Stock</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/product/product-1.jfif" class="product-img me-3" alt="Product">
+                                            <div>
+                                                <div class="fw-bold">Wireless Headphones</div>
+                                                <div class="text-muted">SKU: WH-001</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Electronics</td>
+                                    <td>$129.99</td>
+                                    <td>45</td>
+                                    <td><span class="badge bg-success badge-status">In Stock</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/product/product-2.jfif" class="product-img me-3" alt="Product">
+                                            <div>
+                                                <div class="fw-bold">Running Shoes</div>
+                                                <div class="text-muted">SKU: RS-205</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Footwear</td>
+                                    <td>$89.99</td>
+                                    <td>12</td>
+                                    <td><span class="badge bg-warning badge-status">Low Stock</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/product/product-3.jfif" class="product-img me-3" alt="Product">
+                                            <div>
+                                                <div class="fw-bold">Smart Watch</div>
+                                                <div class="text-muted">SKU: SW-112</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Electronics</td>
+                                    <td>$199.99</td>
+                                    <td>0</td>
+                                    <td><span class="badge bg-danger badge-status">Out of Stock</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/product/product-4.jfif" class="product-img me-3" alt="Product">
+                                            <div>
+                                                <div class="fw-bold">Backpack</div>
+                                                <div class="text-muted">SKU: BP-078</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Accessories</td>
+                                    <td>$59.99</td>
+                                    <td>78</td>
+                                    <td><span class="badge bg-success badge-status">In Stock</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/product/product-5.jfif" class="product-img me-3" alt="Product">
+                                            <div>
+                                                <div class="fw-bold">Water Bottle</div>
+                                                <div class="text-muted">SKU: WB-556</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Accessories</td>
+                                    <td>$24.99</td>
+                                    <td>210</td>
+                                    <td><span class="badge bg-success badge-status">In Stock</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

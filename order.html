@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/order.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html">
+                        <i class='bx bxs-dashboard'></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="prodect.html">
+                        <i class='bx bxs-package'></i>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="order.html" class="active">
+                        <i class='bx bxs-cart-alt'></i>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="payment.html">
+                        <i class='bx bxs-credit-card'></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="slider.html">
+                        <i class='bx bx-slider-alt'></i>
+                        Slider
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <i class='bx bxs-cog'></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded mb-4">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class='bx bx-menu'></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown ms-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i> Admin
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-user me-2'></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-cog me-2'></i> Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bx-log-out me-2'></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="header-title">Order Management</h2>
+                <button class="btn btn-primary">
+                    <i class='bx bx-plus'></i> Create Order
+                </button>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card card-stats card-primary h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Total Orders</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1,248</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-cart-alt icon text-primary'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-success h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Completed</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">892</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-check-circle icon text-success'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-warning h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Pending</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">217</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-time icon text-warning'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card card-stats card-danger h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                        Cancelled</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">139</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-x-circle icon text-danger'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">All Orders</h6>
+                    <div class="d-flex">
+                        <input type="text" class="form-control me-2 search-box" placeholder="Search orders...">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-filter'></i> Filter
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="filterDropdown">
+                                <li><a class="dropdown-item" href="#">All Orders</a></li>
+                                <li><a class="dropdown-item" href="#">Completed</a></li>
+                                <li><a class="dropdown-item" href="#">Processing</a></li>
+                                <li><a class="dropdown-item" href="#">Pending</a></li>
+                                <li><a class="dropdown-item" href="#">Cancelled</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button class="btn btn-primary filter-btn">All</button>
+                        <button class="btn btn-outline-primary filter-btn">Pending</button>
+                        <button class="btn btn-outline-primary filter-btn">Processing</button>
+                        <button class="btn btn-outline-primary filter-btn">Shipped</button>
+                        <button class="btn btn-outline-primary filter-btn">Delivered</button>
+                        <button class="btn btn-outline-primary filter-btn">Cancelled</button>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Customer</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Items</th>
+                                    <th scope="col">Value</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">#ORD-7258</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/order/order-1.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>John Doe</div>
+                                        </div>
+                                    </td>
+                                    <td>12 Nov 2023</td>
+                                    <td>3</td>
+                                    <td>$247.99</td>
+                                    <td><span class="badge bg-success badge-status">Delivered</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#ORD-7257</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/order/order-2.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Sarah Johnson</div>
+                                        </div>
+                                    </td>
+                                    <td>11 Nov 2023</td>
+                                    <td>2</td>
+                                    <td>$119.50</td>
+                                    <td><span class="badge bg-primary badge-status">Processing</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#ORD-7256</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/order/order-3.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Michael Brown</div>
+                                        </div>
+                                    </td>
+                                    <td>10 Nov 2023</td>
+                                    <td>5</td>
+                                    <td>$455.25</td>
+                                    <td><span class="badge bg-warning badge-status">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#ORD-7255</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/order/order-4.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Emily Wilson</div>
+                                        </div>
+                                    </td>
+                                    <td>09 Nov 2023</td>
+                                    <td>1</td>
+                                    <td>$78.99</td>
+                                    <td><span class="badge bg-info badge-status">Shipped</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">#ORD-7254</th>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="image/order/order-5.jfif" class="customer-avatar me-2" alt="Customer">
+                                            <div>Robert Davis</div>
+                                        </div>
+                                    </td>
+                                    <td>08 Nov 2023</td>
+                                    <td>4</td>
+                                    <td>$322.40</td>
+                                    <td><span class="badge bg-danger badge-status">Cancelled</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary action-btn"><i class='bx bx-show'></i></button>
+                                        <button class="btn btn-sm btn-info action-btn"><i class='bx bx-edit'></i></button>
+                                        <button class="btn btn-sm btn-danger action-btn"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Order Status Distribution</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Completed</span>
+                                    <span>72%</span>
+                                </div>
+                                <div class="progress order-progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 72%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Processing</span>
+                                    <span>17%</span>
+                                </div>
+                                <div class="progress order-progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 17%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Pending</span>
+                                    <span>8%</span>
+                                </div>
+                                <div class="progress order-progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 8%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Cancelled</span>
+                                    <span>3%</span>
+                                </div>
+                                <div class="progress order-progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 3%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Recent Activities</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class='bx bxs-check-circle text-success fs-4'></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Order #ORD-7258 delivered</h6>
+                                    <p class="mb-0 text-muted">12 Nov 2023, 10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class='bx bxs-truck text-primary fs-4'></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Order #ORD-7255 shipped</h6>
+                                    <p class="mb-0 text-muted">11 Nov 2023, 02:15 PM</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <i class='bx bxs-x-circle text-danger fs-4'></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Order #ORD-7254 cancelled</h6>
+                                    <p class="mb-0 text-muted">10 Nov 2023, 09:45 AM</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class='bx bxs-credit-card text-info fs-4'></i>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">Payment received for #ORD-7257</h6>
+                                    <p class="mb-0 text-muted">09 Nov 2023, 04:20 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

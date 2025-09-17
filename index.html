@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html" class="active">
+                        <i class='bx bxs-dashboard'></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="prodect.html">
+                        <i class='bx bxs-package'></i>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="order.html">
+                        <i class='bx bxs-cart-alt'></i>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="payment.html">
+                        <i class='bx bxs-credit-card'></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="slider.html">
+                        <i class='bx bx-slider-alt'></i>
+                        Slider
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <i class='bx bxs-cog'></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded mb-4">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class='bx bx-menu'></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown ms-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i> Admin
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-user me-2'></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bxs-cog me-2'></i> Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class='bx bx-log-out me-2'></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <h2 class="header-title">Dashboard Overview</h2>
+            
+            <div class="row">
+                <!-- Total Products Card -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card card-stats card-primary h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Total Products</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">2,356</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-package icon text-primary'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Orders Card -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card card-stats card-success h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Total Orders</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1,248</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-cart-alt icon text-success'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Income Card -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card card-stats card-info h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                        Total Income</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$58,256</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-dollar-circle icon text-info'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Users Card -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card card-stats card-warning h-100">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Total Users</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">936</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class='bx bxs-user icon text-warning'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Recent Activity</h6>
+                        </div>
+                        <div class="card-body">
+                            <p>Welcome to your dashboard! Here you can manage products, orders, payments, and site settings.</p>
+                            <p>Use the sidebar to navigate through different sections of your admin panel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
